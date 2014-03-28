@@ -16,18 +16,18 @@ before_install:
     - sudo ln /usr/lib/erlang/lib/tetrapak-0.4.24.1~3c49c86/bin/tetrapak /usr/bin/ -sf
     - cd ~
 
-#    - git clone https://github.com/travelping/tetrapak_deps.git
-#    - cd tetrapak_deps;git checkout tp-integration;chmod +x installer.sh
-#                
-#
-#    - mkdir -p temp
-#    - cd temp
-#        
-#    - git clone https://github.com/travelping/sh.git
-#    - cd sh
-#    - sudo tetrapak install -local
-#    - cd ..
-#
+    - git clone https://github.com/travelping/tetrapak_deps.git
+    - cd tetrapak_deps;git checkout tp-integration;chmod +x installer.sh
+                
+
+    - mkdir -p temp
+    - cd temp
+        
+    - git clone https://github.com/travelping/sh.git
+    - cd sh
+    - sudo tetrapak install -local
+    - cd ..
+
 #    - git clone https://github.com/travelping/erlsemver.git
 #    - cd erlsemver
 #    - sudo tetrapak install -local
