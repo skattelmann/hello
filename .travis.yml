@@ -10,13 +10,11 @@ before_install:
 
     // setup for tetrapak 
     
-    cd ~
-
-    git clone git@git.tpip.net:tetrapak
-    cd tetrapak;make;sudo make install
-    sudo ln /usr/lib/erlang/lib/tetrapak-0.4.24.1~3c49c86/bin/tetrapak /usr/bin/ -sf
-
-    cd ~
+    - cd ~
+    - git clone git@git.tpip.net:tetrapak
+    - cd tetrapak;make;sudo make install
+    - sudo ln /usr/lib/erlang/lib/tetrapak-0.4.24.1~3c49c86/bin/tetrapak /usr/bin/ -sf
+    - cd ~
 
     git clone git@git.tpip.net:tetrapak_deps
     cd tetrapak_deps;git checkout tp-integration;chmod +x installer.sh
