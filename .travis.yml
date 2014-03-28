@@ -13,6 +13,7 @@ before_install:
     - cd ..
     - git clone https://github.com/travelping/tetrapak.git
     - cd tetrapak;make;sudo make install
+    - ls bin/
     - sudo ln /usr/lib/erlang/lib/tetrapak-0.4.24.1~3c49c86/bin/tetrapak /usr/bin/ -sf
     - cd ..
 
