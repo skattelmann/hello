@@ -11,12 +11,12 @@ before_install:
 #    setup for tetrapak 
     
     - cd ~
-    - git clone https://github.com/tetrapak.git
+    - git clone https://github.com/travelping/tetrapak.git
     - cd tetrapak;make;sudo make install
     - sudo ln /usr/lib/erlang/lib/tetrapak-0.4.24.1~3c49c86/bin/tetrapak /usr/bin/ -sf
     - cd ~
 
-#    git clone git@git.tpip.net:tetrapak_deps
+#    git clone https://github.com/tetrapak_deps.git
 #    cd tetrapak_deps;git checkout tp-integration;chmod +x installer.sh
 #                
 #        // the following is just ./installer.sh (to make it usable with sudo)
