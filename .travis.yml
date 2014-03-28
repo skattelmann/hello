@@ -16,8 +16,8 @@ before_install:
     - sudo ln /usr/lib/erlang/lib/tetrapak-0.4.24.1~3c49c86/bin/tetrapak /usr/bin/ -sf
     - cd ..
 
-    - export ERL_LIBS=$ERL_LIBS:`echo $(pwd)`
-    - export PATH=$PATH:`echo $(pwd)`/tetrapak/bin/
+    - export ERL_LIBS=$ERL_LIBS:`echo pwd`
+    - export PATH=$PATH:`echo pwd`/tetrapak/bin/
 
     - git clone https://github.com/travelping/tetrapak_deps.git
     - cd tetrapak_deps;git checkout tp-integration;chmod +x installer.sh
