@@ -11,11 +11,13 @@ before_install:
 #    setup for tetrapak 
 
     - echo `pwd`
-    
-    - cd ..
-
+    - echo $PATH
     - export ERL_LIBS=$ERL_LIBS:`pwd`/
+    - echo $PATH
+    
 
+
+    - cd ..
     - git clone https://github.com/travelping/tetrapak.git
     - cd tetrapak;make;sudo make install
     - ls bin/
