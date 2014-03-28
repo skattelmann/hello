@@ -11,6 +11,9 @@ before_install:
 #    setup for tetrapak 
     
     - cd ..
+
+    - export ERL_LIBS=$ERL_LIBS:`pwd`/
+
     - git clone https://github.com/travelping/tetrapak.git
     - cd tetrapak;make;sudo make install
     - ls bin/
@@ -20,33 +23,35 @@ before_install:
     - git clone https://github.com/travelping/tetrapak_deps.git
     - cd tetrapak_deps;git checkout tp-integration;chmod +x installer.sh
 
+    - export PATH=$PATH:`pwd`/bin
+
     - mkdir -p temp
     - cd temp
         
     - git clone https://github.com/travelping/sh.git
     - cd sh
-    - sudo ../../../tetrapak/bin/tetrapak install -local
+    - sudo tetrapak install -local
     - cd ..
 
     - git clone https://github.com/travelping/erlsemver.git
     - cd erlsemver
-    - sudo ../../../tetrapak/bin/tetrapak install -local
+    - sudo tetrapak install -local
     - cd ..
 
     - git clone https://github.com/liveforeverx/redbug.git
     - cd redbug
-    - sudo ../../../tetrapak/bin/tetrapak install -local
+    - sudo tetrapak install -local
     - cd ..
 
     - git clone https://github.com/travelping/erlgit.git
     - cd erlgit
-    - sudo ../../../tetrapak/bin/tetrapak install -local
+    - sudo tetrapak install -local
     - cd ..
 
-    - git clone git@git.tpip.net:tetrapak_deps.git
+    - git clone https://github.com/travelping/tetrapak_deps.git
     - cd tetrapak_deps
     - git checkout tp-integration
-    - sudo ../../../tetrapak/bin/tetrapak install -local
+    - sudo tetrapak install -local
     - cd ../..
     - sudo rm -rf temp
 
@@ -54,7 +59,7 @@ before_install:
 
 
 install:
-    - ../tetrapak/bin/tetrapak build
+    - tetrapak build
 
 script:
     - tetrapak test -smp enable
