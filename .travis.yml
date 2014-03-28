@@ -8,7 +8,7 @@ otp_release:
 
 before_install:
 
-    // setup for tetrapak 
+#    setup for tetrapak 
     
     - cd ~
     - git clone git@git.tpip.net:tetrapak
