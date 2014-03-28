@@ -9,11 +9,9 @@ otp_release:
 before_install:
 
 #    setup for tetrapak 
-#    first: ignore ssh authentification stuff
-    -  ssh-keyscan -H git.tpip.net >> ~/.ssh/known_hosts
     
     - cd ~
-    - git clone git@git.tpip.net:tetrapak
+    - git clone https://github.com/tetrapak.git
     - cd tetrapak;make;sudo make install
     - sudo ln /usr/lib/erlang/lib/tetrapak-0.4.24.1~3c49c86/bin/tetrapak /usr/bin/ -sf
     - cd ~
