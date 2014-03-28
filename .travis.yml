@@ -10,7 +10,7 @@ before_install:
 
 #    setup for tetrapak 
 #    first: ignore ssh authentification stuff
-    - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    -  ssh-keyscan -H git.tpip.net >> ~/.ssh/known_hosts
     
     - cd ~
     - git clone git@git.tpip.net:tetrapak
