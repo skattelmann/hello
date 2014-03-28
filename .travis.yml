@@ -9,6 +9,8 @@ otp_release:
 before_install:
 
 #    setup for tetrapak 
+
+    - echo `pwd`
     
     - cd ..
 
