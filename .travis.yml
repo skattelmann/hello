@@ -10,15 +10,17 @@ before_install:
 
 #    setup for tetrapak 
     
-    - cd ~
+    - cd ..
     - git clone https://github.com/travelping/tetrapak.git
     - cd tetrapak;make;sudo make install
     - sudo ln /usr/lib/erlang/lib/tetrapak-0.4.24.1~3c49c86/bin/tetrapak /usr/bin/ -sf
-    - cd ~
+    - cd ..
+
+    - export ERL_LIBS=$ERL_LIBS:`echo $(pwd)`
+    - export PATH=$PATH:`echo $(pwd)`/tetrapak/bin/
 
     - git clone https://github.com/travelping/tetrapak_deps.git
     - cd tetrapak_deps;git checkout tp-integration;chmod +x installer.sh
-                
 
     - mkdir -p temp
     - cd temp
@@ -28,34 +30,34 @@ before_install:
     - sudo tetrapak install -local
     - cd ..
 
-#    - git clone https://github.com/travelping/erlsemver.git
-#    - cd erlsemver
-#    - sudo tetrapak install -local
-#    - cd ..
-#
-#    - git clone https://github.com/liveforeverx/redbug.git
-#    - cd redbug
-#    - sudo tetrapak install -local
-#    - cd ..
-#
-#    - git clone https://github.com/travelping/erlgit.git
-#    - cd erlgit
-#    - sudo tetrapak install -local
-#    - cd ..
-#
-#    - git clone git@git.tpip.net:tetrapak_deps.git
-#    - cd tetrapak_deps
-#    - git checkout tp-integration
-#    - sudo tetrapak install -local
-#    - cd ../..
-#    - sudo rm -rf temp
-#
-#    - cd ~/hello/
-#
-#
-#install:
-#    - tetrapak build
-#
-#script:
-#    - tetrapak test -smp enable
+    - git clone https://github.com/travelping/erlsemver.git
+    - cd erlsemver
+    - sudo tetrapak install -local
+    - cd ..
+
+    - git clone https://github.com/liveforeverx/redbug.git
+    - cd redbug
+    - sudo tetrapak install -local
+    - cd ..
+
+    - git clone https://github.com/travelping/erlgit.git
+    - cd erlgit
+    - sudo tetrapak install -local
+    - cd ..
+
+    - git clone git@git.tpip.net:tetrapak_deps.git
+    - cd tetrapak_deps
+    - git checkout tp-integration
+    - sudo tetrapak install -local
+    - cd ../..
+    - sudo rm -rf temp
+
+    - cd ~/hello/
+
+
+install:
+    - tetrapak build
+
+script:
+    - tetrapak test -smp enable
 
