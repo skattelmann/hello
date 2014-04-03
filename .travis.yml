@@ -56,7 +56,7 @@ before_install:
     #- git checkout tp-integration
     - tetrapak install -local
     - cd ../..
-    - sudo rm -rf temp
+    #- sudo rm -rf temp
 
     - cd ..
     - ls -a
