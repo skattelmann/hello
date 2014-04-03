@@ -14,10 +14,16 @@ before_install:
 
     - export ERL_LIBS=$ERL_LIBS:`pwd`/
 
+    
+
     - git clone https://github.com/travelping/tetrapak.git
     - cd tetrapak;make;sudo make install
     - export PATH=$PATH:`pwd`/bin/
     - sudo ln /usr/lib/erlang/lib/tetrapak-0.4.24.1~3c49c86/bin/tetrapak /usr/bin/ -sf
+    - cd ..
+
+    - git clone https://github.com/extend/ex_uri
+    - cd ex_uri;tetrapak build
     - cd ..
 
     - git clone https://github.com/skattelmann/tetrapak_deps.git
