@@ -20,8 +20,12 @@ before_install:
     - sudo ln /usr/lib/erlang/lib/tetrapak-0.4.24.1~3c49c86/bin/tetrapak /usr/bin/ -sf
     - cd ..
 
-    - git clone https://github.com/travelping/tetrapak_deps.git
-    - cd tetrapak_deps;git checkout tp-integration;chmod +x installer.sh
+    - git clone https://github.com/skattelmann/tetrapak_deps.git
+    - cd tetrapak_deps;
+    # -git checkout tp-integration;
+    - chmod +x installer.sh
+
+    #./installer.sh
 
     - mkdir -p temp
     - cd temp
@@ -47,9 +51,9 @@ before_install:
     - tetrapak install -local
     - cd ..
 
-    - git clone https://github.com/travelping/tetrapak_deps.git
+    - git clone https://github.com/skattelmann/tetrapak_deps.git
     - cd tetrapak_deps
-    - git checkout tp-integration
+    #- git checkout tp-integration
     - tetrapak install -local
     - cd ../..
     - sudo rm -rf temp
