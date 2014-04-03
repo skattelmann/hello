@@ -59,8 +59,7 @@ before_install:
     - sudo rm -rf temp
 
     - cd ..
-    - export ERL_LIBS=$ERL_LIBS:~/.erl_libs/
-
+    - ls -a
     - cd hello/
 
 
